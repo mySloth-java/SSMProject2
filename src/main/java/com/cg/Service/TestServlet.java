@@ -1,8 +1,5 @@
 package com.cg.Service;
 
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.springframework.beans.factory.FactoryBean;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

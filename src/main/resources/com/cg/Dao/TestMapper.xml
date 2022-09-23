@@ -10,9 +10,10 @@
     </select>
 
 <!--    List<employee> getNameEmp();-->
-    <select id="getNameEmp" resultType="com.cg.pojo.employee">
-        select * from login where logname=#{logname} and logword=#{logword}
+    <select id="getNameEmp" resultType="com.cg.pojo.logUser">
+    select * from login where logname=#{logname} and logword=#{logword}
     </select>
+
 
 
 
