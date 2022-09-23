@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>查询页面测试</title>
 </head>
 <body>
-<h3>查询成功</h3>
-    <h3>远程修改测试，等待本地pull</h3>
-<h4>测试成功，遇到安全隐患问题，已解决</h4>
+<table>
+    <tr>
+        <th colspan="6">员工表</th>
+    </tr>
+    <tr>
+        <th>员工ID</th>
+        <th>员工姓名</th>
+        <th>员工年龄</th>
+        <th>员工性别</th>
+        <th>员工邮箱</th>
+    </tr>
+    <tr th:each="employee:${list}">
+        <td th:text="${employee.empId}"></td>
+        <td th:text="${employee.empName}"></td>
+        <td th:text="${employee.age}"></td>
+        <td th:text="${employee.sex}"></td>
+        <td th:text="${employee.email}"></td>
+        <td>
+            <a th:href="" th:value="Delete"></a>
+            <a th:href="" th:value="Add"></a>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
