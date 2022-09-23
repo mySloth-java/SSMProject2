@@ -18,16 +18,16 @@ public class TestCon {
     @Autowired
     TestMapper testMapper;
 
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String getNameEmp(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //获取登录的信息
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        List<employee> nameEmp = testMapper.getNameEmp(username,password);
-        System.out.println(nameEmp);
-        //给予登录反馈
-        if (nameEmp.isEmpty()){
-            response.getWriter().write("登录失败");
+            List<employee> nameEmp = testMapper.getNameEmp(username,password);
+            System.out.println(nameEmp);
+            //给予登录反馈
+            if (nameEmp.isEmpty()){
+                response.getWriter().write("登录失败");
             return "ServiceIndex";
         }else {
             return "LoginSuccess";
