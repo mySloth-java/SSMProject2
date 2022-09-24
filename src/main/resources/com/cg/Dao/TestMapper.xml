@@ -14,7 +14,17 @@
     select * from login where logname=#{logname} and logword=#{logword}
     </select>
 
+<!--    int AddEmp(@Param("empId") int empId,@Param("empName") String empName,@Param("age") int age
+            ,@Param("sex") String sex,@Param("email") String email);
+            -->
+    <insert id="AddEmp">
+        insert into ssm_emp values (emp_id,emp_name,age,sex,email)
+    </insert>
 
+<!--    int UpdateEmp(@Param("empId") int empId);-->
+    <update id="UpdateEmp">
+        update ssm_emp set
+    </update>
 
 
 </mapper>
