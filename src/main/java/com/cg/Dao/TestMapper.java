@@ -16,4 +16,6 @@ public interface TestMapper {
             ,@Param("sex") String sex,@Param("email") String email);
 
     int UpdateEmp(@Param("empId") int empId);
+
+    int DeleteEmp(@Param("empId") int empId);
 }

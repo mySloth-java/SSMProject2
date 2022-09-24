@@ -2,17 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Se7en的资源网站</title>
+    <title>陈7en的资源网站</title>
 </head>
 <body>
-<h6>请登录</h6>
-<hr>
-<form action="/SSMProject2/login" method="post">
-    用户:<input type="text" name="username"><br>
-    密码:<input type="password" name="password"><br>
-    <input type="submit" value="点击登录">
-</form>
-<hr>
+    <h3>恭喜你登录成功</h3>
+    <h6>请自行在本网站使用你需要的功能，此网站仅仅是作为一个练手项目，一年内会关闭</h6>
+    <a th:href="@{/SelectEmp}">点击查询所有员工信息</a>
+    <a th:href="@{/}">软件21303班</a>
 
 </body>
 </html>

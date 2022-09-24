@@ -26,5 +26,10 @@
         update ssm_emp set
     </update>
 
+<!--    int DeleteEmp(@Param("empId") int empId);-->
+    <delete id="DeleteEmp">
+        delete from ssm_emp where emp_id=empId
+    </delete>
+
 
 </mapper>

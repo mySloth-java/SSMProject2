@@ -21,4 +21,5 @@ public class SelectCon {
         model.addAttribute("allEmp", list);
         return "empSelect";
     }
+
 }

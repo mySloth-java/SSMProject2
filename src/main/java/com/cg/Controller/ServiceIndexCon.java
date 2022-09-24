@@ -14,7 +14,7 @@ import java.util.List;
 
 //控制层由MVC管理
 @Controller
-public class TestCon {
+public class ServiceIndexCon {
     @Autowired
     TestMapper testMapper;
 
