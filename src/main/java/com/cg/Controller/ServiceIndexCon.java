@@ -23,14 +23,14 @@ public class ServiceIndexCon {
         //获取登录的信息
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-            List<employee> nameEmp = testMapper.getNameEmp(username,password);
-            System.out.println(nameEmp);
+        List<employee> nameEmp = testMapper.getNameEmp(username,password);
+        System.out.println(nameEmp);
             //给予登录反馈
             if (nameEmp.isEmpty()){
                 response.getWriter().write("登录失败");
-            return "ServiceIndex";
+                return "LoginIndex";
         }else {
-            return "LoginSuccess";
+            return "ServiceIndex";
         }
 
 

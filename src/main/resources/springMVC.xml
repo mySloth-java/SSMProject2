@@ -37,7 +37,7 @@
     <mvc:annotation-driven></mvc:annotation-driven>
 
 <!--    视图控制器-->
-    <mvc:view-controller path="/" view-name="ServiceIndex"></mvc:view-controller>
+    <mvc:view-controller path="/" view-name="LoginIndex"></mvc:view-controller>
 
 <!--    文件上传解析器-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
