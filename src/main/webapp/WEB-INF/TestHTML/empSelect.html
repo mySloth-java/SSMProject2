@@ -15,16 +15,17 @@
         <th>员工年龄</th>
         <th>员工性别</th>
         <th>员工邮箱</th>
+        <th>操作选项(<a th:href="@{/toAdd}">add</a>)</th>
     </tr>
-    <tr th:each="employee:${list}">
-        <td th:text="${employee.empId}"></td>
+    <tr th:each="employee : ${allEmp}">
+        <td th:text="${employee.empID}"></td>
         <td th:text="${employee.empName}"></td>
         <td th:text="${employee.age}"></td>
         <td th:text="${employee.sex}"></td>
         <td th:text="${employee.email}"></td>
         <td>
-            <a th:href="" th:value="Delete"></a>
-            <a th:href="" th:value="Add"></a>
+            <a th:href="@{/toUpdate}">update</a>
+            <a th:href="@{/toDelete}">delete</a>
         </td>
     </tr>
 </table>
