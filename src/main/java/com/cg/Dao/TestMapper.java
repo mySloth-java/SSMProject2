@@ -12,7 +12,7 @@ public interface TestMapper {
 
     List<employee> getNameEmp(@Param("logname") String logname,@Param("logword") String logword);
 
-    int AddEmp(@Param("empId") int empId,@Param("empName") String empName,@Param("age") int age
+    int AddEmp(@Param("empID") int empID,@Param("empName") String empName,@Param("age") int age
             ,@Param("sex") String sex,@Param("email") String email);
 
     int UpdateEmp(@Param("empId") int empId);

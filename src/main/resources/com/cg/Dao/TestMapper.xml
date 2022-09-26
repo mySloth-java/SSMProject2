@@ -18,7 +18,8 @@
             ,@Param("sex") String sex,@Param("email") String email);
             -->
     <insert id="AddEmp">
-        insert into ssm_emp values (emp_id,emp_name,age,sex,email)
+--         insert into ssm_emp values (emp_id,emp_name,age,sex,email)
+            insert into ssm_emp (emp_id,emp_name,age,sex,email) values (#{empID},#{empName},#{age},#{sex},#{email})
     </insert>
 
 <!--    int UpdateEmp(@Param("empId") int empId);-->
