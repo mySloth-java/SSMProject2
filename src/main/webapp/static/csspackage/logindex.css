@@ -46,7 +46,7 @@ html::before {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(../csspackage/img/left.png);
+    background-image: url(../csspackage/img/sakula.jpg);
     background-size: cover;
     opacity: 80%;
 }
