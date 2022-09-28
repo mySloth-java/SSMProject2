@@ -26,19 +26,23 @@ public class SelectCon {
 
     //添加功能仅跳转，在控制器内
     @RequestMapping(value = "/addEmp",method = RequestMethod.POST)
-    public String AddEmp(HttpServletRequest request){
-        //获取填入的信息
-        String empID = request.getParameter("empID");
-        int id = Integer.parseInt(empID);
-        String empName = request.getParameter("empName");
-        String age = request.getParameter("age");
-        Integer integer = Integer.getInteger(age);
-        String sex = request.getParameter("sex");
-        String email = request.getParameter("email");
-
-
-        mapper.AddEmp(id,empName,integer,sex,email);
-        return "redirect:empSelect";
+    public String AddEmp(employee emp){
+        mapper.AddEmp(emp);
+        return "redirect:/SelectEmp";
     }
+//    public String AddEmp(HttpServletRequest request){
+//        //获取填入的信息
+//        String empID = request.getParameter("empID");
+//        int id = Integer.parseInt(empID);
+//        String empName = request.getParameter("empName");
+//        String age = request.getParameter("age");
+//        Integer integer = Integer.getInteger(age);
+//        String sex = request.getParameter("sex");
+//        String email = request.getParameter("email");
+//
+//
+//        mapper.AddEmp(id,empName,integer,sex,email);
+//        return "redirect:empSelect";
+//    }
 
 }
