@@ -14,6 +14,12 @@
     select * from login where logname=#{logname} and logword=#{logword}
     </select>
 
+<!--    List<employee> getIdEmp(@Param("empID") Integer empID);-->
+    <select id="getIdEmp" resultType="com.cg.pojo.employee">
+        select * from ssm_emp where emp_id=#{empID}
+    </select>
+
+
 <!--    void AddEmp(employee employee); -->
     <insert id="AddEmp">
         insert into ssm_emp (emp_id,emp_name,age,sex,email)values (#{empID},#{empName},#{age},#{sex},#{email})
