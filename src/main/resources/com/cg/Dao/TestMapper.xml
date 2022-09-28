@@ -23,7 +23,7 @@
 
 <!--    int UpdateEmp(@Param("empId") int empId);-->
     <update id="UpdateEmp" parameterType="com.cg.pojo.employee">
-        update ssm_emp set emp_id=#{}
+        update ssm_emp set emp_name=#{empName},age=#{age},sex=#{sex},email=#{email} where emp_id=#{empID}
     </update>
 
 <!--    int DeleteEmp(@Param("empId") int empId);-->
