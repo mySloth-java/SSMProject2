@@ -5,6 +5,7 @@ import com.cg.pojo.employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
@@ -28,9 +29,11 @@ public class SelectCon {
         return "redirect:/SelectEmp";
     }
 
-    @RequestMapping(value = "/updateEmp")
-    public String UpdateEmp(employee employee){
-        mapper.UpdateEmp(employee);
+    @RequestMapping(value = "/updateEmp/{empID}",method = RequestMethod.GET)
+    public String UpdateEmp(@PathVariable("empID") Integer empID,Model model){
+        //根据穿来的id查找对应的员工
+
+
         return "redirect:/SelectEmp";
     }
 
