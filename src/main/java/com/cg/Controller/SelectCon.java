@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 @Controller
 public class SelectCon {
@@ -25,8 +23,14 @@ public class SelectCon {
 
     //添加功能仅跳转，在控制器内
     @RequestMapping(value = "/addEmp",method = RequestMethod.POST)
-    public String AddEmp(employee emp){
-        mapper.AddEmp(emp);
+    public String AddEmp(employee employee){
+        mapper.AddEmp(employee);
+        return "redirect:/SelectEmp";
+    }
+
+    @RequestMapping(value = "/updateEmp")
+    public String UpdateEmp(employee employee){
+        mapper.UpdateEmp(employee);
         return "redirect:/SelectEmp";
     }
 

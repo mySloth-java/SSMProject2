@@ -14,7 +14,7 @@ public interface TestMapper {
 
     void AddEmp(employee employee);
 
-    int UpdateEmp(@Param("empId") int empId);
+    void UpdateEmp(employee employee);
 
     int DeleteEmp(@Param("empId") int empId);
 }

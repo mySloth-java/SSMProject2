@@ -21,7 +21,7 @@
 
 <!--    int UpdateEmp(@Param("empId") int empId);-->
     <update id="UpdateEmp">
-        update ssm_emp set
+        update ssm_emp set emp_name=#{emp_Name},age=#{age},sex=#{sex},email=#{email} where emp_id=#{empID}
     </update>
 
 <!--    int DeleteEmp(@Param("empId") int empId);-->
