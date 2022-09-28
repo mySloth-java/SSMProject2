@@ -27,7 +27,7 @@ public class SelectCon {
     @RequestMapping(value = "/addEmp",method = RequestMethod.POST)
     public String AddEmp(employee emp){
         mapper.AddEmp(emp);
-        return "redirect:empSelect";
+        return "redirect:/SelectEmp";
     }
 
 }
