@@ -22,8 +22,8 @@
     </insert>
 
 <!--    int UpdateEmp(@Param("empId") int empId);-->
-    <update id="UpdateEmp">
-        update ssm_emp set
+    <update id="UpdateEmp" parameterType="com.cg.pojo.employee">
+        update ssm_emp set emp_id=#{}
     </update>
 
 <!--    int DeleteEmp(@Param("empId") int empId);-->
