@@ -5,9 +5,11 @@ import com.cg.pojo.employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.xml.bind.ValidationEvent;
 import java.util.List;
 @Controller
 public class SelectCon {
@@ -25,15 +27,8 @@ public class SelectCon {
     //添加功能仅跳转，在控制器内
     @RequestMapping(value = "/addEmp",method = RequestMethod.POST)
     public String AddEmp(employee employee){
+        //获取填入的信息
         mapper.AddEmp(employee);
-        return "redirect:/SelectEmp";
-    }
-
-    @RequestMapping(value = "/updateEmp/{empID}",method = RequestMethod.GET)
-    public String UpdateEmp(@PathVariable("empID") Integer empID,Model model){
-        //根据穿来的id查找对应的员工
-
-
         return "redirect:/SelectEmp";
     }
 
