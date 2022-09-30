@@ -22,13 +22,13 @@
     </insert>
 
 <!--    int UpdateEmp(@Param("empId") int empId);-->
-    <update id="UpdateEmp">
-        update ssm_emp set
+    <update id="UpdateEmp" parameterType="com.cg.pojo.employee">
+        update ssm_emp set emp_name=#{empName},age=#{age},sex=#{sex},email=#{email}
     </update>
 
 <!--    int DeleteEmp(@Param("empId") int empId);-->
     <delete id="DeleteEmp">
-        delete from ssm_emp where emp_id=empId
+        delete from ssm_emp where emp_id=#{empID}
     </delete>
 
 

@@ -31,4 +31,9 @@ public class SelectCon {
         return "redirect:/SelectEmp";
     }
 
+    @RequestMapping(value = "/DeleteEmp")
+    public String DeleteEmp(employee employee){
+        return "redirect:/SelectEmp";
+    }
+
 }
