@@ -9,14 +9,17 @@
         select * from ssm_emp
     </select>
 
+<!--    List<employee> getIdEmp(@Param("empID") Integer empID);-->
+    <select id="getIdEmp" resultType="com.cg.pojo.employee">
+        select * from ssm_emp where emp_id=#{empID}
+    </select>
+
 <!--    List<employee> getNameEmp();-->
     <select id="getNameEmp" resultType="com.cg.pojo.logUser">
     select * from login where logname=#{logname} and logword=#{logword}
     </select>
 
-<!--    int AddEmp(@Param("empId") int empId,@Param("empName") String empName,@Param("age") int age
-            ,@Param("sex") String sex,@Param("email") String email);
-            -->
+<!--    void AddEmp(employee employee);-->
     <insert id="AddEmp" parameterType="com.cg.pojo.employee">
         insert into ssm_emp  (emp_id,emp_name,age,sex,email)values (#{empID},#{empName},#{age},#{sex},#{email})
     </insert>
