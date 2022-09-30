@@ -32,9 +32,6 @@ public class ServiceIndexCon {
         }else {
             return "ServiceIndex";
         }
-
-
-
     }
 
 }
