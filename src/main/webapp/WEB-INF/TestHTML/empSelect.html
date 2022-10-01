@@ -5,7 +5,6 @@
     <title>员工表操作页面</title>
 </head>
 <body>
-<<<<<<< HEAD:src/main/webapp/WEB-INF/TestHTML/empSelect.html
 <div>
     <table>
         <tr>
@@ -49,31 +48,5 @@
         }
     })
 </script>
-=======
-<table>
-    <tr>
-        <th colspan="6">员工表</th>
-    </tr>
-    <tr>
-        <th>员工ID</th>
-        <th>员工姓名</th>
-        <th>员工年龄</th>
-        <th>员工性别</th>
-        <th>员工邮箱</th>
-        <th>操作选项(<a th:href="@{/toAdd}">add</a>)</th>
-    </tr>
-    <tr th:each="employee : ${allEmp}">
-        <td th:text="${employee.empID}"></td>
-        <td th:text="${employee.empName}"></td>
-        <td th:text="${employee.age}"></td>
-        <td th:text="${employee.sex}"></td>
-        <td th:text="${employee.email}"></td>
-        <td>
-            <a th:href="@{'/toUpdate/'+${employee.empID}}">update</a>
-            <a th:href="@{/toDelete}">delete</a>
-        </td>
-    </tr>
-</table>
->>>>>>> origin/master:src/main/webapp/TestHTML/empSelect.html
 </body>
 </html>

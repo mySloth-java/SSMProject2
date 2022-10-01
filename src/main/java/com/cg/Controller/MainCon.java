@@ -42,8 +42,6 @@ public class MainCon {
         mapper.UpdateEmp(employee.getEmpID());
         return "redirect:/SelectEmp";
     }
-
-
     //删除员工，绑定vue事件
     @RequestMapping(value = "/toDelete/{empID}")
     public String DeleteEmp(@PathVariable("empID") Integer empID){
