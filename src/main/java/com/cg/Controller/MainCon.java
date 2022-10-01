@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 @Controller
-public class SelectCon {
+public class MainCon {
     @Autowired
     TestMapper mapper;
 
@@ -44,9 +44,10 @@ public class SelectCon {
     }
 
 
-
-    @RequestMapping(value = "/DeleteEmp")
-    public String DeleteEmp(employee employee,Model model){
+    //删除员工，绑定vue事件
+    @RequestMapping(value = "/toDelete/{empID}")
+    public String DeleteEmp(@PathVariable("empID") Integer empID){
+        mapper.DeleteEmp(empID);
         return "redirect:/SelectEmp";
     }
 

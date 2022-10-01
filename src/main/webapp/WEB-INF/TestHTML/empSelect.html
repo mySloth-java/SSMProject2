@@ -5,29 +5,48 @@
     <title>员工表操作页面</title>
 </head>
 <body>
-<table>
-    <tr>
-        <th colspan="6">员工表</th>
-    </tr>
-    <tr>
-        <th>员工ID</th>
-        <th>员工姓名</th>
-        <th>员工年龄</th>
-        <th>员工性别</th>
-        <th>员工邮箱</th>
-        <th>操作选项(<a th:href="@{/toAdd}">add</a>)</th>
-    </tr>
-    <tr th:each="employee : ${allEmp}">
-        <td th:text="${employee.empID}"></td>
-        <td th:text="${employee.empName}"></td>
-        <td th:text="${employee.age}"></td>
-        <td th:text="${employee.sex}"></td>
-        <td th:text="${employee.email}"></td>
-        <td>
-            <a th:href="@{'/toUpdate/'+${employee.empID}}">update</a>
-            <a th:href="@{/toDelete}">delete</a>
-        </td>
-    </tr>
-</table>
+<div>
+    <table>
+        <tr>
+            <th colspan="6">员工表</th>
+        </tr>
+        <tr>
+            <th>员工ID</th>
+            <th>员工姓名</th>
+            <th>员工年龄</th>
+            <th>员工性别</th>
+            <th>员工邮箱</th>
+            <th>操作选项(<a th:href="@{/toAdd}">add</a>)</th>
+        </tr>
+        <tr th:each="employee : ${allEmp}">
+            <td th:text="${employee.empID}"></td>
+            <td th:text="${employee.empName}"></td>
+            <td th:text="${employee.age}"></td>
+            <td th:text="${employee.sex}"></td>
+            <td th:text="${employee.email}"></td>
+            <td>
+                <a th:href="@{'/toUpdate/'+${employee.empID}}">update</a>
+                <a @click="deleteEmp()" th:href="@{'/toDelete/'+${employee.empID}}">delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!--绑定点击事件删除-->
+<script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+
+<script type="text/javascript">
+    var vue=new Vue({
+        el:"#app",
+        methods:{
+            deleteEmp(){
+                var form = document.getElementsByTagName("form")[0];
+                form.action = event.target.href;
+                form.submit();
+                event.preventDefault();
+            }
+        }
+    })
+</script>
 </body>
 </html>

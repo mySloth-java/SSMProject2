@@ -24,7 +24,7 @@
         insert into ssm_emp  (emp_id,emp_name,age,sex,email)values (#{empID},#{empName},#{age},#{sex},#{email})
     </insert>
 
-<!--    int UpdateEmp(@Param("empId") int empId);-->
+<!--    int UpdateEmp(@Param("empID") Integer empID);-->
     <update id="UpdateEmp" parameterType="com.cg.pojo.employee">
         update ssm_emp set emp_name=#{empName},age=#{age},sex=#{sex},email=#{email} where emp_id=#{empID}
     </update>
