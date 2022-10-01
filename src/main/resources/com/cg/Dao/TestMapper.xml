@@ -23,6 +23,9 @@
     <insert id="AddEmp" parameterType="com.cg.pojo.employee">
         insert into ssm_emp  (emp_id,emp_name,age,sex,email)values (#{empID},#{empName},#{age},#{sex},#{email})
     </insert>
+    <insert id="AddEmp">
+        insert into ssm_emp (emp_id,emp_name,age,sex,email)values(#{empID},#{empName},#{age},#{sex},#{email})
+    </insert>
 
 <!--    int UpdateEmp(@Param("empID") Integer empID);-->
     <update id="UpdateEmp" parameterType="com.cg.pojo.employee">
