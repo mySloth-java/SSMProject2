@@ -2,35 +2,35 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>修改员工信息</title>
 </head>
 <body>
 <form th:action="@{/UpdateEmp}" method="post">
   <input type="hidden" name="_method" value="put">
-  <input type="hidden" name="empID" th:value="${employee.empID}">
+  <input type="hidden" name="empID" th:value="${idEmp.empID}">
   <table>
     <tr>
       <th colspan="2">修改</th>
     </tr>
     <tr>
       <td>员工姓名</td>
-      <td><input type="text" name="empName" th:value="${employee.empName}"></td>
+      <td><input type="text" name="empName" th:value="${idEmp.empName}"></td>
     </tr>
     <tr>
       <td>年龄</td>
-      <td><input type="text" name="age" th:value="${employee.age}"></td>
+      <td><input type="text" name="age" th:value="${idEmp.age}"></td>
     </tr>
     <tr>
       <td>性别</td>
       <td>
-        <input type="radio" name="sex" value="男" th:field="${employee.sex}">
-        <input type="radio" name="sex" value="女" th:field="${employee.sex}">
-        <input type="radio" name="sex" value="HOMO" th:field="${employee.sex}">
+        <input type="radio" name="sex" value="男" th:field="${idEmp.sex}">男
+        <input type="radio" name="sex" value="女" th:field="${idEmp.sex}">女
+        <input type="radio" name="sex" value="HOMO" th:field="${idEmp.sex}">HOMO
       </td>
     </tr>
     <tr>
       <td>邮箱</td>
-      <td><input type="text" name="email" th:value="${employee.email}"></td>
+      <td><input type="text" name="email" th:value="${idEmp.email}"></td>
     </tr>
     <tr>
       <td colspan="2">

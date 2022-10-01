@@ -10,13 +10,13 @@ import java.util.List;
 public interface TestMapper {
     List<employee> getAll();
 
-    List<employee> getIdEmp(@Param("empID") Integer empID);
+    employee getIdEmp(@Param("empID") Integer empID);
 
     List<employee> getNameEmp(@Param("logname") String logname,@Param("logword") String logword);
 
     void AddEmp(employee employee);
 
-    int UpdateEmp(@Param("empId") int empId);
+    int UpdateEmp(@Param("empID") Integer empID);
 
     int DeleteEmp(@Param("empId") int empId);
 }

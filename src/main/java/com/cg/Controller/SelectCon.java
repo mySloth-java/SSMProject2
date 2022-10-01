@@ -32,15 +32,14 @@ public class SelectCon {
     //修改员工表第一步，通过Select中的链接跳转到此方法，由此方法返回到Update页面中
     @RequestMapping(value = "/toUpdate/{empID}",method = RequestMethod.GET)
     public String toUpdate(@PathVariable("empID") Integer empID,Model model){
-        List<com.cg.pojo.employee> idEmp = mapper.getIdEmp(empID);
+        employee idEmp = mapper.getIdEmp(empID);
         model.addAttribute("idEmp",idEmp);
         return "empToUpdate";
     }
     //修改员工第二步
-    @RequestMapping(value = "/UpdateEmp",method = RequestMethod.POST)
-    public String UpdateEmp(employee employee, Model model){
-
-
+    @RequestMapping(value = "/UpdateEmp",method =RequestMethod.PUT)
+    public String UpdateEmp(employee employee){
+        mapper.UpdateEmp(employee.getEmpID());
         return "redirect:/SelectEmp";
     }
 
