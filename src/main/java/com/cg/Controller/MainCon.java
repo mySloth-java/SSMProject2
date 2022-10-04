@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import java.util.List;
 @Controller
 public class MainCon {
@@ -36,17 +37,24 @@ public class MainCon {
         model.addAttribute("idEmp",idEmp);
         return "empToUpdate";
     }
+
     //修改员工第二步
     @RequestMapping(value = "/UpdateEmp",method =RequestMethod.PUT)
     public String UpdateEmp(employee employee){
         mapper.UpdateEmp(employee.getEmpID());
         return "redirect:/SelectEmp";
     }
+
     //删除员工，绑定vue事件
     @RequestMapping(value = "/toDelete/{empID}")
     public String DeleteEmp(@PathVariable("empID") Integer empID){
         mapper.DeleteEmp(empID);
         return "redirect:/SelectEmp";
+    }
+
+    @RequestMapping(value = "/about")
+    public String about(){
+        return "aboutService";
     }
 
 }
